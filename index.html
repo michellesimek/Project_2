@@ -8,11 +8,35 @@
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         <link rel="stylesheet" href="static/css/style.css">
         <script src="https://d3js.org/d3.v5.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript"></script>
+
+
+    
     </head>
 
     <body>
-        <script src="data.js"></script>
-        <script src="app.js"></script>
+        <div class="container-fluid">
+            <div class="jumbotron text-center">
+              <h1>Potholes in my Data</h1>
+              <h2>Chicago Pothole Data: 2011 - 2021 </h2>
+            </div>
+          </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+          <div id="svg-area"></div>
+          <div id="chart_div"></div>
+        <!-- <script src="data.js"></script> -->
+        <script src="static/js/app.js"></script>
 
     </body>
 </html>
