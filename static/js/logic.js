@@ -85,30 +85,31 @@ function updateData() {
     // filter data based on year selected in dropdown menu
     let filteredData = data.filter(elt => elt.CREATION_YEAR == dataSelection);
     console.log(filteredData);
+    console.log(dataSelection);
 
-    // create function to group data by
-    function groupBy(objectArray, property) {
-        return objectArray.reduce(function (acc, obj) {
-          let key = obj[property]
-          if (!acc[key]) {
-            acc[key] = []
-          }
-          acc[key].push(obj)
-          return acc
-        }, {})
-    };
+    // // create function to group data by
+    // function groupBy(objectArray, property) {
+    //     return objectArray.reduce(function (acc, obj) {
+    //       let key = obj[property]
+    //       if (!acc[key]) {
+    //         acc[key] = []
+    //       }
+    //       acc[key].push(obj)
+    //       return acc
+    //     }, {})
+    // };
 
-    function groupBySum(objectArray, property) {
-      return objectArray.reduce(function (acc, obj) {
-        let key = obj[property]
-        acc[key] = (acc[key] || 0) + 1
-        return acc
-      }, {})
-    };
+    // function groupBySum(objectArray, property) {
+    //   return objectArray.reduce(function (acc, obj) {
+    //     let key = obj[property]
+    //     acc[key] = (acc[key] || 0) + 1
+    //     return acc
+    //   }, {})
+    // };
 
-    // call groupBy function to group filteredData by MOST_RECENT_ACTION
-    let groupedAction = groupBy(filteredData, 'STATUS');
-    console.log(groupedAction);
+    // // call groupBy function to group filteredData by MOST_RECENT_ACTION
+    // let groupedAction = groupBy(filteredData, 'STATUS');
+    // console.log(groupedAction);
 
     buildGeoMap(filteredData);
     buildBarChart(dataSelection, filteredData);
@@ -175,6 +176,10 @@ L.control.layers(baseMaps).addTo(myMap);
 };
 
 function buildBarChart(dataSelection,filteredData) {
+
+  // clear/overwrite previous data
+  let barchart = d3.select("#top_x_div")
+  barchart.html(""); 
   
   console.log(dataSelection);
   console.log(filteredData);
@@ -226,6 +231,11 @@ function buildBarChart(dataSelection,filteredData) {
 
 
 function buildLineChart(dataSelection, filteredData) {
+
+  // clear/overwrite previous data
+  let linechart = d3.select("#chart_div")
+  linechart.html(""); 
+  
   console.log(dataSelection);
   console.log(filteredData);
 
