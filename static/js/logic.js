@@ -1,5 +1,13 @@
 var myMap;
 var markerGroup;
+var potholeIcon = L.icon({
+  iconUrl: '/static/pothole.svg',
+
+  iconSize:     [38, 95], // size of the icon
+  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
 // svg container
 var svgHeight = 400;
@@ -127,7 +135,7 @@ function buildGeoMap(filteredData, dataSelection) {
     for (var i = 0; i < 100; i++) {
         var location = filterCoord[i];
         console.log(location);
-        L.marker([location[0],location[1]]).addTo(markerGroup);
+        L.marker([location[0],location[1]], {icon: potholeIcon}).addTo(markerGroup);
       };
    },0)
   
