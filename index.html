@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
 
 
     
@@ -19,24 +22,36 @@
     <body>
         <div class="container-fluid">
             <div class="jumbotron text-center">
-              <h1>Potholes in my Data</h1>
-              <h2>Chicago Pothole Data: 2011 - 2021 </h2>
+              <h1>Chicago Pothole Data</h1>
+              <h2>Years: 2010 - 2018 </h2>
             </div>
           </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+          <div class="well">
+            <h5>Filtered Year:</h5>
+              <select id="selDataset"></select>
           </div>
-          <div id="svg-area"></div>
-          <div id="chart_div"></div>
+          <div class="container px-4">
+            <div class="row gx-5">
+              <div class="col-md-6">
+                <div id="map"></div>
+              </div>
+              <div class="col-md-6">
+                <div id="chart_div"></div>
+                <div id="top_x_div"></div>
+                <div id="svg-area"></div>
+              </div>
+            </div>
+          </div>
+          <link rel="stylesheet" type="text/css" href="static/js/style.css">
+          <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+          integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+          crossorigin=""></script>
+            <!-- D3 JavaScript -->
+            <script src="https://d3js.org/d3.v5.min.js"></script>
+        <!-- API key -->
+        <script type="text/javascript" src="static/js/config.js"></script>
         <!-- <script src="data.js"></script> -->
-        <script src="static/js/app.js"></script>
+        <script src="static/js/logic.js"></script>
 
     </body>
 </html>
