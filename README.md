@@ -29,3 +29,5 @@ For those interested in Chicago pothole data over various years, they can use th
 - Pie chart of pothole completion status using Google Charts
 - Line chart of potholes by month using Plotly
 
+All visualizations update depending on the year selected in the dropdown.
+
